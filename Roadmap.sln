@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap", "Roadmap\Roadmap.csproj", "{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap", "src\Roadmap\Roadmap.csproj", "{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3134A601-07E2-4FF9-B6B2-FEE29EBA4776}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{5112CF46-3072-47E7-BD87-65F4906672EC}"
+ProjectSection(SolutionItems) = preProject
+				docker-compose.yml = docker-compose.yml
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0C88EFF6-A07F-483E-BE1A-4CBF3D5C5FB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{34F88DAC-113E-40F4-B735-3F1009B83860}"
 ProjectSection(SolutionItems) = preProject
-    .editorconfig = .editorconfig
+				.editorconfig = .editorconfig
 	.gitignore = .gitignore
+	README.md = README.md
+	Dockerfile = Dockerfile
 EndProjectSection
 EndProject
 Global
