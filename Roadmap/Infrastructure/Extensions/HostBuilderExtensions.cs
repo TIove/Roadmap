@@ -19,7 +19,7 @@ public static class HostBuilderExtensions
             {
                 options.SwaggerDoc("v1",
                     new OpenApiInfo
-                        {Title = $"{Assembly.GetExecutingAssembly().GetName().FullName}", Version = "v1"});
+                        {Title = $"{Assembly.GetExecutingAssembly().GetName().Name}", Version = "v1"});
 
                 options.CustomSchemaIds(x => x.FullName);
 
