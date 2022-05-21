@@ -21,7 +21,7 @@ public static class HostBuilderExtensions
                     new OpenApiInfo
                         {Title = $"{Assembly.GetExecutingAssembly().GetName().Name}", Version = "v1"});
 
-                options.IncludeXmlComments(@"./bin/Debug/net6.0/Roadmap.Models.Dto.xml"); //TODO check with windows
+                options.IncludeXmlComments(@"./bin/Debug/net6.0/Roadmap.Models.Dto.xml");
 
                 options.CustomSchemaIds(x => x.FullName);
 
