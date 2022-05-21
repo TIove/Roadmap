@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  roadmap-service:
+    image: 'roadmap-service'
+    hostname: roadmap-service
+    environment:
+      - APP_PORT=$APP_PORT
+    ports:
+      - "${APP_PORT}:80"
