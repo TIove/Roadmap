@@ -7,8 +7,22 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net6.0\Roadmap.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="11.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Roadmap.DataProvider.MsSql.Ef\Roadmap.DataProvider.MsSql.Ef.csproj" />
+      <ProjectReference Include="..\Roadmap.Domain\Roadmap.Domain.csproj" />
+      <ProjectReference Include="..\Roadmap.Models.Dto\Roadmap.Models.Dto.csproj" />
     </ItemGroup>
 
 </Project>

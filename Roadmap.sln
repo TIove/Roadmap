@@ -6,18 +6,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3134A601-07E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{5112CF46-3072-47E7-BD87-65F4906672EC}"
 ProjectSection(SolutionItems) = preProject
-				docker-compose.yml = docker-compose.yml
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0C88EFF6-A07F-483E-BE1A-4CBF3D5C5FB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{34F88DAC-113E-40F4-B735-3F1009B83860}"
 ProjectSection(SolutionItems) = preProject
-				.editorconfig = .editorconfig
+	.editorconfig = .editorconfig
 	.gitignore = .gitignore
 	README.md = README.md
-	Dockerfile = Dockerfile
 EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.Domain", "src\Roadmap.Domain\Roadmap.Domain.csproj", "{BFF5A79A-617A-4C61-A076-1488C3492464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.Data", "src\Roadmap.Data\Roadmap.Data.csproj", "{22099725-7F20-4857-827B-711F0A245BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.DataProvider.MsSql.Ef", "src\Roadmap.DataProvider.MsSql.Ef\Roadmap.DataProvider.MsSql.Ef.csproj", "{6D8B95AB-045A-4452-9C6E-48C5F4C37012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.Models.Db", "src\Roadmap.Models.Db\Roadmap.Models.Db.csproj", "{BC365C79-3F36-4720-A25D-2DBA5D99F992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.Models.Dto", "src\Roadmap.Models.Dto\Roadmap.Models.Dto.csproj", "{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +37,33 @@ Global
 		{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF5A79A-617A-4C61-A076-1488C3492464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF5A79A-617A-4C61-A076-1488C3492464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF5A79A-617A-4C61-A076-1488C3492464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF5A79A-617A-4C61-A076-1488C3492464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22099725-7F20-4857-827B-711F0A245BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22099725-7F20-4857-827B-711F0A245BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22099725-7F20-4857-827B-711F0A245BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22099725-7F20-4857-827B-711F0A245BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8B95AB-045A-4452-9C6E-48C5F4C37012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8B95AB-045A-4452-9C6E-48C5F4C37012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8B95AB-045A-4452-9C6E-48C5F4C37012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8B95AB-045A-4452-9C6E-48C5F4C37012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC365C79-3F36-4720-A25D-2DBA5D99F992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC365C79-3F36-4720-A25D-2DBA5D99F992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC365C79-3F36-4720-A25D-2DBA5D99F992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC365C79-3F36-4720-A25D-2DBA5D99F992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{71293AC1-6CCE-446E-9D40-E7B3B0BB2CC8} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
+		{BFF5A79A-617A-4C61-A076-1488C3492464} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
+		{22099725-7F20-4857-827B-711F0A245BDB} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
+		{6D8B95AB-045A-4452-9C6E-48C5F4C37012} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
+		{BC365C79-3F36-4720-A25D-2DBA5D99F992} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
+		{E642B7AE-E71F-4BAC-BAA3-9BAC9702B085} = {3134A601-07E2-4FF9-B6B2-FEE29EBA4776}
 	EndGlobalSection
 EndGlobal
