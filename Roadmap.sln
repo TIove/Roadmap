@@ -18,6 +18,7 @@ ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 	README.md = README.md
 	Dockerfile = Dockerfile
+	.dockerignore = .dockerignore
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roadmap.Domain", "src\Roadmap.Domain\Roadmap.Domain.csproj", "{BFF5A79A-617A-4C61-A076-1488C3492464}"

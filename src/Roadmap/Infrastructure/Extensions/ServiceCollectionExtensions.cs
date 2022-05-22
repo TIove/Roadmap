@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
         {
             connStr = configuration.GetConnectionString("SQLConnectionString");
         }
-        
+
         services.AddDbContext<RoadmapDbContext>(options =>
         {
             options.UseSqlServer(connStr);
