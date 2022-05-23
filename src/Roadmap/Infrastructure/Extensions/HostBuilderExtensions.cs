@@ -34,7 +34,6 @@ public static class HostBuilderExtensions
     private static IServiceCollection AddSwagger(this IServiceCollection services)
     {
         services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
-            
 
         services.AddSwaggerGen(options =>
         {

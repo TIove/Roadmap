@@ -3,6 +3,7 @@ version: '3.9'
 services:
   user-service:
     build: .
+    container_name: user-service
     environment:
       - APP_PORT=$APP_PORT
       - SQLConnectionString=$SQL_CONNECTION_STRING
@@ -13,6 +14,7 @@ services:
       - msserver
   msserver:
     image: 'mcr.microsoft.com/azure-sql-edge'
+    container_name: msserver
     environment:
       SA_PASSWORD: "ProductApi(!)"
       ACCEPT_EULA: "Y"
