@@ -14,19 +14,9 @@ public static class HostBuilderExtensions
         {
             services.AddSingleton<IStartupFilter, TerminalStartupFilter>();
 
-            services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
-            services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1",
-                    new OpenApiInfo
-                        {Title = $"{Assembly.GetExecutingAssembly().GetName().Name}", Version = "v1"});
-
-                options.IncludeXmlComments(@"./bin/Debug/net6.0/Roadmap.Models.Dto.xml");
-
-                options.CustomSchemaIds(x => x.FullName);
-
-                options.OperationFilter<HeaderOperationFilter>();
-            });
+#if DEBUG
+            services.AddSwagger();
+#endif
         });
         return builder;
     }
@@ -39,5 +29,26 @@ public static class HostBuilderExtensions
         });
 
         return builder;
+    }
+
+    private static IServiceCollection AddSwagger(this IServiceCollection services)
+    {
+        services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
+            
+
+        services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1",
+                new OpenApiInfo
+                    {Title = $"{Assembly.GetExecutingAssembly().GetName().Name}", Version = "v1"});
+
+            options.IncludeXmlComments(@"./bin/Debug/net6.0/Roadmap.Models.Dto.xml");
+
+            options.CustomSchemaIds(x => x.FullName);
+
+            options.OperationFilter<HeaderOperationFilter>();
+        });
+
+        return services;
     }
 }
