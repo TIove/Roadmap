@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using Tiove.Roadmap.Infrastructure.Filters;
 using Tiove.Roadmap.Infrastructure.StartupFilters;
 using Tiove.Roadmap.Infrastructure.Swagger;
@@ -18,6 +19,9 @@ public static class HostBuilderExtensions
             services.AddSwagger();
 #endif
         });
+
+        builder.AddSerilog();
+
         return builder;
     }
 
@@ -31,7 +35,7 @@ public static class HostBuilderExtensions
         return builder;
     }
 
-    private static IServiceCollection AddSwagger(this IServiceCollection services)
+    private static void AddSwagger(this IServiceCollection services)
     {
         services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
 
@@ -47,7 +51,22 @@ public static class HostBuilderExtensions
 
             options.OperationFilter<HeaderOperationFilter>();
         });
+    }
 
-        return services;
+    private static void AddSerilog(this IHostBuilder builder)
+    {
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .AddJsonFile(
+                $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json",
+                true)
+            .Build();
+
+        Log.Logger = new LoggerConfiguration().ReadFrom
+            .Configuration(configuration)
+            .Enrich.WithProperty("Service", "UserService")
+            .CreateLogger();
+        
+        builder.UseSerilog();
     }
 }

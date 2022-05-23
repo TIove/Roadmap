@@ -1,3 +1,4 @@
+using Serilog;
 using Tiove.Roadmap.Infrastructure.Extensions;
 
 namespace Tiove.Roadmap;
@@ -6,7 +7,18 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        CreateHostBuilder(args).Build().Run();
+        try
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+        catch (Exception exc)
+        {
+            Log.Fatal(exc, "Can not properly start UserService.");
+        }
+        finally
+        {
+            Log.CloseAndFlush();
+        }
     }
 
     private static IHostBuilder CreateHostBuilder(string[] args) =>
