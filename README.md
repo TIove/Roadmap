@@ -2,6 +2,11 @@
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 <img src="Resources/automapper.png" alt="drawing" width="50"/>
 
+---
+### This repository developed as sample API app with the base modern frameworks and can be used to explore and implement to your own app
+### The stages can be found in separate branches
+---
+
 ## Stages
 | Stage         | Description        | Technologies | Completed |
 |:-------------:|:------------------:|:------------:|:---------:|
