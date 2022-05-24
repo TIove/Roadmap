@@ -9,8 +9,8 @@
 | 2 | **Entity Framework Core** <br>with<br> **Microsoft SQL** |<img src="Resources/EFcore.jpeg" alt="drawing" width="100"/><br><br><img src="Resources/mssql.jpeg" alt="drawing" width="100"/>| ✅ |
 | 3 | **Docker**<br>and<br>**GitHub Actions** | ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)<br><br><img src="Resources/GHactions.png" alt="drawing" width="100"/> | ✅ |
 | 4 | **Logging** | <img src="Resources/serilog.png" alt="drawing" width="100"/> | ✅ |
-| 5 | **Authentication**| | ❌ |
-| 6 | **Tests**   |  | ❌ |
+| 5 | **Tests**   | <img src="Resources/nunit.jpeg" alt="drawing" width="100"/> | ✅ |
+
 
 
 ## Full roadmap
