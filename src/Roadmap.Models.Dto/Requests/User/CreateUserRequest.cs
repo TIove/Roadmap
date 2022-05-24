@@ -9,6 +9,6 @@ public class CreateUserRequest
     
     [Required]
     public string LastName { get; set; }
-    
-    public string MiddleName { get; set; }
+
+    public string? MiddleName { get; set; }
 }
