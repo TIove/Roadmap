@@ -27,7 +27,17 @@ public class UserController : ControllerBase
     [HttpGet("get/{userId}")]
     public async Task<ActionResult<UserDto>> GetUser(Guid userId, CancellationToken token)
     {
-        return Ok(await _userService.GetUser(userId, token));
+        UserDto response;
+        try
+        {
+            response = await _userService.GetUser(userId, token);
+        }
+        catch (ArgumentException ex)
+        {
+            return NotFound(ex.Message);
+        }
+
+        return Ok(response);
     }
 
     [HttpPatch("edit/{userId}")]

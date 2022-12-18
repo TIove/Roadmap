@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Roadmap.Data;
-using Roadmap.DataProvider.MsSql.Ef;
+using Roadmap.DataProvider.PostgreSql.Ef;
 using Roadmap.Domain.Services;
 using Roadmap.Domain.Services.Interfaces;
 using Tiove.Roadmap.Infrastructure.Extensions;

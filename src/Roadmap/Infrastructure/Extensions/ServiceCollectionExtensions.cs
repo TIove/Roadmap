@@ -1,6 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Roadmap.DataProvider.MsSql.Ef;
+using Roadmap.DataProvider.PostgreSql.Ef;
 using Tiove.Roadmap.Infrastructure.Mapping;
 
 namespace Tiove.Roadmap.Infrastructure.Extensions;
@@ -19,7 +19,7 @@ public static class ServiceCollectionExtensions
 
         services.AddDbContext<RoadmapDbContext>(options =>
         {
-            options.UseSqlServer(connStr);
+            options.UseNpgsql(connStr);
         });
     }
 
