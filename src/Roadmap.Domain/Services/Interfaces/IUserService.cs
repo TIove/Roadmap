@@ -13,4 +13,6 @@ public interface IUserService
     Task<bool> EditUser(JsonPatchDocument<EditUserRequest> patch, Guid userId, CancellationToken token);
 
     Task<bool> DeleteUser(Guid userId, CancellationToken token);
+
+    Task<List<UserDto>> GetAllUsers(CancellationToken token);
 }

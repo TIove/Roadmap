@@ -1,4 +1,5 @@
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using Roadmap.Data;
@@ -90,5 +91,14 @@ public class UserService : IUserService
         await _provider.SaveAsync(token);
 
         return true;
+    }
+
+    public async Task<List<UserDto>> GetAllUsers(CancellationToken token)
+    {
+        token.ThrowIfCancellationRequested();
+
+        return await _provider.Users
+            .ProjectTo<UserDto>(_mapper.ConfigurationProvider)
+            .ToListAsync(cancellationToken: token);
     }
 }

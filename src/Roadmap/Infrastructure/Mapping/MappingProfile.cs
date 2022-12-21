@@ -17,8 +17,7 @@ public class MappingProfile : Profile
             .ForMember(db => db.IsAdmin, opt => opt.MapFrom(x => false))
             .ForMember(db => db.IsActive, opt => opt.MapFrom(x => true))
             .ForMember(db => db.CreatedBy, _ => Guid.NewGuid()) //TODO with authentication
-            .ForMember(db => db.CreatedAtUtc, opt => opt.MapFrom(x => DateTime.UtcNow))
-            .ReverseMap();
+            .ForMember(db => db.CreatedAtUtc, opt => opt.MapFrom(x => DateTime.UtcNow));
 
         CreateMap<DbUser, UserDto>()
             .ReverseMap();

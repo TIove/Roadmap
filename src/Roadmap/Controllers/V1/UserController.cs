@@ -54,4 +54,10 @@ public class UserController : ControllerBase
     {
         return Ok(await _userService.DeleteUser(userId, token));
     }
+
+    [HttpGet("get/all")]
+    public async Task<ActionResult<bool>> GetAllUsers(CancellationToken token)
+    {
+        return Ok(await _userService.GetAllUsers(token));
+    }
 }
