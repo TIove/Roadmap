@@ -18,10 +18,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Setup .NET 6
+      - name: Setup .NET 7
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.100
+          dotnet-version: 7.x.x
 
       - name: Setup NuGet.exe
         uses: NuGet/setup-nuget@v1.0.5
