@@ -27,7 +27,7 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
 
       - name: Restore
-        run: nuget restore -Source https://api.nuget.org/v3/index.json
+        run: dotnet restore
       - name: Build
         run: dotnet build --no-restore --configuration Release
       - name: Test
