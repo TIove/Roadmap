@@ -28,7 +28,7 @@ public static class ServiceCollectionExtensions
         var mapperConfig = new MapperConfiguration(mc =>
         {
             mc.AddProfile<MappingProfile>();
-        });
+        }, new LoggerFactory());
 
         IMapper mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);

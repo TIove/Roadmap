@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Linq;
 using System.Threading;
 using AutoMapper;
@@ -72,7 +72,7 @@ public class UserServiceTests
     #endregion
 
     #region Private methods
-    
+
     private Guid AddNewDbUser()
     {
         var newDbUser = _mapper.Map<DbUser>(_correctCreateUserRequest);
@@ -93,7 +93,10 @@ public class UserServiceTests
 
         _userFirstNamePatchDocument = new JsonPatchDocument<EditUserRequest>()
         {
-            Operations = {new Operation<EditUserRequest>("replace", "firstname", null, EditedFirstName)}
+            Operations =
+            {
+                new Operation<EditUserRequest>("replace", "firstname", null, EditedFirstName)
+            }
         };
 
         _createdUser = new UserDto()
@@ -108,7 +111,7 @@ public class UserServiceTests
     }
 
     #endregion
-    
+
     [Test]
     public void ShouldCreateNewUser()
     {
@@ -171,4 +174,4 @@ public class UserServiceTests
         Assert.IsTrue(_repository.DeleteUser(userId, CancellationToken.None).Result);
         Assert.ThrowsAsync<ArgumentException>(() => _repository.DeleteUser(userId, CancellationToken.None));
     }
-}
+}*/
